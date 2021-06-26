@@ -1,0 +1,31 @@
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collection;
+public class HelloWorld{
+
+     public static void main(String []args){
+      int arr[]={-3,-1,0,1,2,4,5}; //a sorted array
+      
+      //check if there are no negative integers or 0, nothing can add to 0
+      if(arr[0]>0){
+         System.out.println("False"); 
+         return;
+      }
+      
+      int minPointer=0;
+      int maxPointer=arr.length-1;
+      int result;
+      
+      while(minPointer<maxPointer){
+          result=arr[minPointer]+arr[maxPointer];
+          if(result==0){
+              System.out.println("numbers are "+arr[minPointer]+" "+arr[maxPointer]);
+              return;
+          }else if(result<0){
+              minPointer++;
+          }else
+            maxPointer--;
+      }
+      System.out.println("False");
+    }
+}
